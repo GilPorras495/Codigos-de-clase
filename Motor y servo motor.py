@@ -33,13 +33,13 @@ class Servo(Actuador):
 motor1 = Motor("Motor Principal")
 servo1 = Servo("Micro Servo SG90")
 
-print("=== Motor ===")
+print("Prueba del Motor")
 motor1.estado()
 motor1.activar()
 motor1.estado()
 motor1.girar()
 
-print("\n=== Servo ===")
+print("\n Prueba del servo")
 servo1.estado()
 servo1.activar()
 servo1.estado()

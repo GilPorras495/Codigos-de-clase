@@ -40,7 +40,6 @@ control_base = Controlador("Controlador Genérico", setpoint=50.0)
 pid = ControladorPID("PID Temperatura Horno", setpoint=180.0)
 on_off = ControladorOnOff("Termostato Aire", setpoint=22.0)
 
-print("=== Ejecución de Métodos controlar() ===")
 print(f"Objeto: {control_base.nombre}")
 control_base.controlar()
 

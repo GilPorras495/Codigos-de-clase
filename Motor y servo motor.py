@@ -33,6 +33,8 @@ class Servo(Actuador):
 motor1 = Motor("Motor Principal")
 servo1 = Servo("Micro Servo SG90")
 
+print("Usar solo numeros enteros para los calculos")
+
 print("Prueba del Motor")
 motor1.estado()
 motor1.activar()
@@ -43,4 +45,4 @@ print("\n Prueba del servo")
 servo1.estado()
 servo1.activar()
 servo1.estado()
-servo1.mover_angulo(a)
+servo1.mover_angulo(90)

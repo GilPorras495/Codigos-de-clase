@@ -43,20 +43,19 @@ class SimuladorUrbano(base_de_datos):
         self.limites = {"AV_NORTE": 60, "AV_SUR": 80, "AV_ESTE": 50, "AV_OESTE": 70}
 
     def mostrar_matriz(self):
-        print("--- MATRIZ 2D DE CONGESTIÓN VEHICULAR ---")
+        print("Matriz del congestionamiento")
         [print(f"Fila {valor}:", row) for valor, row in enumerate(self.matriz)]
         print()
 
     def buscar_velocidad(self, objeto):
-        print(f"🔎 [BÚSQUEDA LINEAL] Buscando velocidad {objeto} km/h en el vector...")
-        [print(f"  ✅ Encontrado a las {hora}:00 hrs") for hora, velocidad in enumerate(self.vector) if velocidad == objeto]
+        print(f"Buscando velocidad {objeto} km/h en el vector...")
+        [print(f"✅ Encontrado a las {hora}:00 hrs") for hora, velocidad in enumerate(self.vector) if velocidad == objeto]
 
     def buscar_matriz(self, objeto):
-        print(f"🔎 [BÚSQUEDA LINEAL] Buscando intersección con {objeto} vehículos en la matriz...")
-        [[print(f"  ✅ Encontrado en [{posx}][{posy}]") for posy, value in enumerate(row) if value == objeto] for posx, row in enumerate(self.matriz)]
+        print(f"Buscando intersección con {objeto} vehículos en la matriz...")
+        [[print(f"✅ Encontrado en [{posx}][{posy}]") for posy, value in enumerate(row) if value == objeto] for posx, row in enumerate(self.matriz)]
 
     def _ordenar_burbuja(self, lista):
-        """Requerimiento: Ordenar las intersecciones de mayor a menor congestión mediante algoritmos de ordenamiento."""
         n = len(lista)
         for i in range(n):
             for j in range(0, n - i - 1):

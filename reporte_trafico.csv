@@ -1,0 +1,45 @@
+Limite de velocidad en la avenida en Km/h
+Codigo Avenida,Limite (km/h)
+AV_NORTE,60
+AV_SUR,80
+AV_ESTE,50
+AV_OESTE,70
+
+Congestionamiento en la avenida 
+Fila,Columna,Conteo Vehicular
+0,1,210
+2,2,155
+0,2,150
+0,0,120
+2,1,120
+2,0,110
+1,0,100
+1,1,99
+1,2,88
+
+Velocidades en la avenida 
+Hora del Dia,Velocidad Maxima Registrada
+0:00,44
+1:00,49
+2:00,77
+3:00,60
+4:00,40
+5:00,97
+6:00,80
+7:00,62
+8:00,106
+9:00,88
+10:00,52
+11:00,64
+12:00,108
+13:00,105
+14:00,95
+15:00,105
+16:00,43
+17:00,87
+18:00,97
+19:00,45
+20:00,58
+21:00,96
+22:00,42
+23:00,99

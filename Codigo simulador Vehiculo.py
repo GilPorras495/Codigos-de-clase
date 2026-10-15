@@ -37,9 +37,7 @@ class SimuladorUrbano(base_de_datos):
         self.filas, self.columnas = filas, columnas
         
         self.matriz = [[random.randint(10, 800) for _ in range(columnas)] for _ in range(filas)]
-        
         self.vector = [random.randint(40, 110) for _ in range(24)]  
-        
         self.limites = {"AV_NORTE": 60, "AV_SUR": 80, "AV_ESTE": 50, "AV_OESTE": 70}
 
     def mostrar_matriz(self):
@@ -49,11 +47,28 @@ class SimuladorUrbano(base_de_datos):
 
     def buscar_velocidad(self, objeto):
         print(f"Buscando velocidad {objeto} km/h en el vector...")
-        [print(f"✅ Encontrado a las {hora}:00 hrs") for hora, velocidad in enumerate(self.vector) if velocidad == objeto]
+        encontrado = False
+        for hora, velocidad in enumerate(self.vector):
+            if velocidad == objeto:
+                print(f"✅ Se encontro {objeto} km/h se registró a las {hora}:00 hrs.")
+                encontrado = True
+        
+        if not encontrado:
+            print(f"❌ No se encontro ninguna velocidad de {objeto} km/h no se registró en ningún horario.")
+        print()
 
     def buscar_matriz(self, objeto):
         print(f"Buscando intersección con {objeto} vehículos en la matriz...")
-        [[print(f"✅ Encontrado en [{posx}][{posy}]") for posy, value in enumerate(row) if value == objeto] for posx, row in enumerate(self.matriz)]
+        encontrado = False
+        for posx, row in enumerate(self.matriz):
+            for posy, value in enumerate(row):
+                if value == objeto:
+                    print(f"✅ Se encontro {objeto} vehículos en la posición Matriz[{posx}][{posy}].")
+                    encontrado = True
+        
+        if not encontrado:
+            print(f"❌ No se encontro ninguna intersección de la matriz registra exactamente {objeto} vehículos.")
+        print()
 
     def _ordenar_burbuja(self, lista):
         n = len(lista)
@@ -78,7 +93,7 @@ class SimuladorUrbano(base_de_datos):
         self.exportar_csv(ordenadas, self.vector, self.limites)
 
 if __name__ == "__main__":
-    print("Configuracion del simulador")
+    print("Configuración del simulador")
     filas = int(input("Filas de la matriz (por defecto 3): ") or 3)
     columnas = int(input("Columnas de la matriz (por defecto 3): ") or 3)
     sim = SimuladorUrbano(filas, columnas)
